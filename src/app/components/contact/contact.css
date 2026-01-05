@@ -1,0 +1,46 @@
+/* CONTACT PAGE — layout + icon behavior */
+
+.contact-icon-row {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+
+/* Responsive spacing */
+@media (max-width: 900px) {
+  .contact-icon-row {
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-icon-row {
+    gap: 2.5rem;
+  }
+
+  .contact-icon {
+    font-size: 2.5rem;
+  }
+}
+
+/* Icon hover behavior */
+.contact-icon {
+  font-size: 3rem;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-block;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease;
+}
+
+.contact-icon:hover {
+  transform: scale(1.22);
+  opacity: 0.95;
+  text-shadow: 0 0 12px rgba(148, 163, 255, 0.6);
+}
+
+.contact-card {
+  padding: 2rem;
+}

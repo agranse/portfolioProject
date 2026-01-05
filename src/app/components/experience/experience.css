@@ -1,0 +1,139 @@
+/* EXPERIENCE PAGE — collapsible cards + metadata */
+
+/* Section titles */
+.exp-section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1rem;
+}
+
+.exp-item {
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem
+}
+
+/* Timeline wrapper (line disabled) */
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: none;
+}
+
+/* Toggle button */
+.exp-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease,
+    color 0.25s ease;
+}
+
+.exp-toggle-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between years + arrow */
+}
+
+
+.exp-toggle:hover {
+  opacity: 0.9;
+}
+
+/* Arrow rotation */
+.exp-arrow {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exp-toggle.open .exp-arrow {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+/* Underline hover animation */
+.exp-toggle::after {
+  content: "";
+  position: absolute;
+  left: 1.25rem;
+  bottom: 0.6rem;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 0.7;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exp-toggle:hover::after {
+  width: 55%;
+}
+
+/* Collapsible content */
+.exp-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    max-height 0.35s ease,
+    padding 0.35s ease;
+  margin-bottom: 0.75rem;
+}
+
+.exp-content.open {
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+/* Fade-in list items */
+.exp-content ul li {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+.exp-content.open ul li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Divider */
+.exp-divider {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 2rem 0 1.5rem;
+}
+
+/* Metadata */
+.exp-years {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.exp-dates {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}

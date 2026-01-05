@@ -1,0 +1,193 @@
+<div class="rowing-page">
+
+  <!-- HERO -->
+  <section class="fade-up">
+    <h2 class="title">Rowing</h2>
+    <p class="subtitle">
+      Rowing taught me how to stay steady in chaos, make decisions under pressure, 
+      and lead with intention — lessons that shape everything I build today.
+    </p>
+  </section>
+
+  <div class="section-divider fade-up"></div>
+
+  <!-- ACTION SHOTS -->
+  <section class="short-clips-section fade-up">
+    <h3 class="rowing-section-heading">Action Shots</h3>
+
+    <div class="short-clips-grid">
+
+      <div class="video-card glass hover-lift fade-up">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="assets/rowingVideos/video3_fixed.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-card glass hover-lift fade-up">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="assets/rowingVideos/video1_fixed.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-card glass hover-lift fade-up">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="assets/rowingVideos/video4_fixed.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-card glass hover-lift fade-up">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="assets/rowingVideos/video5_fixed.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-card glass hover-lift fade-up">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="assets/rowingVideos/video6_fixed.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-card glass hover-lift fade-up">
+        <video autoplay muted loop playsinline preload="auto">
+          <source src="assets/rowingVideos/video7_fixed.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider fade-up"></div>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="achievements-section fade-up">
+    <h3 class="rowing-section-heading">Highlights & Achievements</h3>
+
+    <div class="achievement-chips">
+      <span class="chip glass hover-lift fade-up medal-shimmer">Head of the Charles Medalist</span>
+      <span class="chip glass hover-lift fade-up">5× Head of the Charles Competitor</span>
+      <span class="chip glass hover-lift fade-up">College Varsity 8+</span>
+      <span class="chip glass hover-lift fade-up">3× Bald Eagle Invitational Gold Medalist</span>
+      <span class="chip glass hover-lift fade-up">College PR Coordinator</span>
+      <span class="chip glass hover-lift fade-up">Junior Team Captain</span>
+      <span class="chip glass hover-lift fade-up">Junior MVP</span>
+    </div>
+  </section>
+
+  <!-- FEATURED CAROUSEL -->
+  <section class="carousel-section fade-up">
+
+    <div class="carousel glass hover-lift" (mouseenter)="pause()" (mouseleave)="resume()">
+      <button class="carousel-btn left" (click)="prevImage()">‹</button>
+
+      <div class="carousel-image-wrapper">
+        <img 
+          [src]="featuredImages[currentIndex]" 
+          loading="lazy"
+          alt="Featured rowing photo"
+          class="carousel-image"
+        />
+      </div>
+
+      <button class="carousel-btn right" (click)="nextImage()">›</button>
+    </div>
+
+    <div class="carousel-dots">
+      <span 
+        *ngFor="let img of featuredImages; let i = index"
+        class="dot"
+        [class.active]="i === currentIndex"
+        (click)="goToImage(i)"
+      ></span>
+    </div>
+
+  </section>
+
+  <div class="section-divider fade-up"></div>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section fade-up">
+    <h3 class="rowing-section-heading">Rowing Journey</h3>
+
+    <div class="timeline-wrapper">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-content">
+
+        <div class="timeline-entry fade-up">
+          <span class="year">2025</span>
+          <p>Raced at the Head of the Charles in Boston, in the Men's Senior Master 4+.</p>
+          <p>Passed 7 boats on one of the world's most challenging courses.</p>
+          <p>Medaled at the world's largest regatta for the first time in my rowing career.</p>
+        </div>
+
+        <div class="timeline-entry fade-up">
+          <span class="year">2024</span>
+          <p>Raced at the Head of the Charles in the Men's Club 4+.</p>
+          <p>Competed with fellow University of Minnesota alumni.</p>
+        </div>
+
+        <div class="timeline-entry fade-up">
+          <span class="year">2022</span>
+          <p>Raced at the Head of the Charles in the Men's Club 4+.</p>
+          <p>Raced at the Bald Eagle Invitational, winning 2 gold medals and bringing home 2 trophies.</p>
+        </div>
+
+        <div class="timeline-entry fade-up">
+          <span class="year">2021</span>
+          <p>Raced at the Bald Eagle Invitational.</p>
+          <p>Won gold and brought home the team's first trophy in the history of the event.</p>
+        </div>
+
+        <div class="timeline-entry fade-up">
+          <span class="year">2019</span>
+          <p>Raced at the Head of the Charles in the Women's Senior Master 4+ and Women's Grand Master 4+.</p>
+          <p>Voted junior rowing team captain again.</p>
+        </div>
+
+        <div class="timeline-entry fade-up">
+          <span class="year">2018</span>
+          <p>Voted junior rowing team captain.</p>
+          <p>Voted junior rowing team MVP.</p>
+        </div>
+
+        <div class="timeline-entry fade-up">
+          <span class="year">2016</span>
+          <p>Started rowing and joined the junior rowing team.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider fade-up"></div>
+
+  <!-- RACE FOOTAGE -->
+  <section class="video-section fade-up">
+    <h3 class="rowing-section-heading">Race Footage</h3>
+
+    <div class="video-embed glass hover-lift fade-up">
+      <iframe 
+        src="https://www.youtube.com/embed/d99XQvWL4yk"
+        title="Head of the Charles — Coxswain Seat"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <p class="video-caption">Head of the Charles — Coxswain Seat</p>
+  </section>
+
+  <div class="section-divider fade-up"></div>
+
+  <!-- GALLERY -->
+  <section class="gallery-section fade-up">
+    <h3 class="rowing-section-heading">Gallery</h3>
+
+    <div class="gallery-grid">
+      <div class="gallery-item fade-up" *ngFor="let img of galleryImages">
+        <img [src]="img" alt="Rowing photo">
+      </div>
+    </div>
+  </section>
+
+</div>

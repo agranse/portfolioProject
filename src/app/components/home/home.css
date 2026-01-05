@@ -1,0 +1,46 @@
+/* HERO SECTION — layout + unique visual details */
+
+.hero {
+  text-align: center;
+  padding: 7rem 1rem 6rem;
+}
+
+/* Title */
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 18px rgba(99, 102, 241, 0.25);
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--accent);
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-bottom: 0.75rem;
+}
+
+/* Accent line */
+.hero-accent {
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  margin: 0.5rem auto 1.2rem;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+/* Tagline */
+.hero-tagline {
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  opacity: 0.85;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}

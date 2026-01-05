@@ -1,0 +1,9 @@
+/* ABOUT PAGE — layout only */
+
+.glass {
+  padding: 2rem;
+}
+
+.about-section-title {
+  color: var(--accent);
+}

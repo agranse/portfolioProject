@@ -1,0 +1,78 @@
+/* ============================================================
+   SKILLS PAGE — layout + unique visuals only
+   ============================================================ */
+
+.skills-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Two-column layout on medium+ screens */
+@media (min-width: 900px) {
+  .skills-page {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Make the Technical Skills card span both columns */
+  .skill-card:first-child {
+    grid-column: span 2;
+  }
+}
+
+.skill-card {
+  padding: 2rem;
+}
+
+/* Icons */
+.skill-icon {
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+  opacity: 0.8;
+  color: var(--accent);
+  transform: translateY(1px);
+}
+
+/* Section titles */
+.skill-section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Groups */
+.skill-group {
+  margin-bottom: 2rem;
+}
+
+.skill-group-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* Tags */
+.skill-tags {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 0 8px rgba(99,102,241,0.25);
+  transform: translateY(-2px);
+}
