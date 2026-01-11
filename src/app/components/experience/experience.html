@@ -1,11 +1,12 @@
-<div class="experience timeline fade-up">
+<div class="experience timeline stagger">
 
   <!-- WORK EXPERIENCE -->
-  <h2 class="exp-section-title">Work Experience</h2>
+  <h2 class="exp-section-title" [style.--i]="1">Work Experience</h2>
 
   <div 
     class="glass hover-lift exp-item"
     *ngFor="let item of experience; let i = index"
+    [style.--i]="i + 2"
     [class.open]="openIndex === i"
   >
     <button class="exp-toggle" (click)="toggle(i)" [class.open]="openIndex === i">
@@ -34,11 +35,12 @@
   <hr class="exp-divider">
 
   <!-- EDUCATION -->
-  <h2 class="exp-section-title">Education</h2>
+  <h2 class="exp-section-title" [style.--i]="experience.length + 2">Education</h2>
 
   <div 
     class="glass hover-lift exp-item"
     *ngFor="let item of education; let i = index"
+    [style.--i]="experience.length + 3 + i"
     [class.open]="openIndex === (i + experience.length)"
   >
     <button 
@@ -62,6 +64,7 @@
       </ul>
     </div>
   </div>
+
 
 
 </div>

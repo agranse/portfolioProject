@@ -64,12 +64,12 @@
 
     <div class="achievement-chips">
       <span class="chip glass hover-lift fade-up medal-shimmer">Head of the Charles Medalist</span>
-      <span class="chip glass hover-lift fade-up">5× Head of the Charles Competitor</span>
-      <span class="chip glass hover-lift fade-up">College Varsity 8+</span>
-      <span class="chip glass hover-lift fade-up">3× Bald Eagle Invitational Gold Medalist</span>
-      <span class="chip glass hover-lift fade-up">College PR Coordinator</span>
-      <span class="chip glass hover-lift fade-up">Junior Team Captain</span>
-      <span class="chip glass hover-lift fade-up">Junior MVP</span>
+      <span class="chip glass hover-lift fade-up medal-shimmer">5× Head of the Charles Competitor</span>
+      <span class="chip glass hover-lift fade-up medal-shimmer">College Varsity 8+</span>
+      <span class="chip glass hover-lift fade-up medal-shimmer">3× Bald Eagle Invitational Gold Medalist</span>
+      <span class="chip glass hover-lift fade-up medal-shimmer">College PR Coordinator</span>
+      <span class="chip glass hover-lift fade-up medal-shimmer">Junior Team Captain</span>
+      <span class="chip glass hover-lift fade-up medal-shimmer">Junior MVP</span>
     </div>
   </section>
 
@@ -186,6 +186,7 @@
     <div class="gallery-grid">
       <div class="gallery-item fade-up" *ngFor="let img of galleryImages">
         <img [src]="img" alt="Rowing photo">
+        {{ img.split('/')[img.split('/').length - 1] }}
       </div>
     </div>
   </section>

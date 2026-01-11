@@ -15,13 +15,10 @@ export class Rowing implements OnInit, OnDestroy {
    * ------------------------------------------------------------ */
   featuredImages: string[] = [
     'assets/rowingPhotos/photo1.jpg',
-    'assets/rowingPhotos/photo12.jpg',
-    'assets/rowingPhotos/photo15.jpg',
     'assets/rowingPhotos/photo35.jpg',
+    'assets/rowingPhotos/photo15.jpg',
     'assets/rowingPhotos/photo26.jpg',
-    'assets/rowingPhotos/photo18.jpg',
-    'assets/rowingPhotos/photo33.jpg',
-    'assets/rowingPhotos/photo8.jpg'
+    'assets/rowingPhotos/photo36.jpg',
   ];
 
   /* ------------------------------------------------------------
@@ -35,30 +32,18 @@ export class Rowing implements OnInit, OnDestroy {
     'assets/rowingPhotos/photo6.jpg',
     'assets/rowingPhotos/photo7.jpg',
     'assets/rowingPhotos/photo9.jpg',
-    'assets/rowingPhotos/photo13.jpg',
-    'assets/rowingPhotos/photo14.jpg',
     'assets/rowingPhotos/photo16.jpg',
     'assets/rowingPhotos/photo17.jpg',
-    'assets/rowingPhotos/photo19.jpg',
-    'assets/rowingPhotos/photo20.jpg',
-    'assets/rowingPhotos/photo21.jpg',
-    'assets/rowingPhotos/photo22.jpg',
-    'assets/rowingPhotos/photo23.jpg',
-    'assets/rowingPhotos/photo24.jpg',
-    'assets/rowingPhotos/photo25.jpg',
-    'assets/rowingPhotos/photo27.jpg',
     'assets/rowingPhotos/photo28.jpg',
-    'assets/rowingPhotos/photo29.jpg',
     'assets/rowingPhotos/photo30.jpg',
-    'assets/rowingPhotos/photo31.jpg',
     'assets/rowingPhotos/photo32.jpg',
     'assets/rowingPhotos/photo34.jpg',
-    'assets/rowingPhotos/photo36.jpg',
     'assets/rowingPhotos/photo37.jpg',
-    'assets/rowingPhotos/photo38.jpg',
-    'assets/rowingPhotos/photo39.jpg',
-    'assets/rowingPhotos/photo40.jpg',
-    'assets/rowingPhotos/photo41.jpg'
+    'assets/rowingPhotos/photo41.jpg',
+    'assets/rowingPhotos/photo12.jpg',
+    'assets/rowingPhotos/photo18.jpg',
+    'assets/rowingPhotos/photo33.jpg',
+    'assets/rowingPhotos/photo8.jpg'
   ];
 
   /* ------------------------------------------------------------
