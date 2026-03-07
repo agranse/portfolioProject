@@ -1,46 +1,103 @@
-/* HERO SECTION — layout + unique visual details */
+/* ============================================================
+   HERO — Cosmic Cinematic Edition
+   ============================================================ */
 
 .hero {
   text-align: center;
-  padding: 7rem 1rem 6rem;
+  padding: 8rem 1rem 7rem;
+  position: relative;
+  z-index: 1;
 }
 
-/* Title */
+/* Cosmic glow */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 70%);
+  filter: blur(40px);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+/* ------------------------------------------------------------
+   TITLE
+   ------------------------------------------------------------ */
+
 .hero-title {
-  font-size: 3.2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 18px rgba(99, 102, 241, 0.25);
-}
-
-/* Subtitle */
-.hero-subtitle {
-  font-size: 1.5rem;
-  color: var(--accent);
-  letter-spacing: 1.5px;
+  font-family: var(--font-serif);
+  font-size: 3.6rem;
   font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  text-shadow: 0 0 22px rgba(212,185,138,0.25);
+  animation: fadeUp 1s ease forwards;
+}
+
+/* ------------------------------------------------------------
+   SUBTITLE
+   ------------------------------------------------------------ */
+
+.hero-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  letter-spacing: 1.2px;
   opacity: 0.9;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
-/* Accent line */
+/* ------------------------------------------------------------
+   ACCENT LINE (with shimmer)
+   ------------------------------------------------------------ */
+
 .hero-accent {
-  width: 48px;
+  width: 60px;
   height: 3px;
-  background: var(--accent);
-  margin: 0.5rem auto 1.2rem;
+  margin: 0.5rem auto 1.4rem;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
   border-radius: 2px;
-  opacity: 0.7;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Tagline */
+.hero-accent::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background: rgba(255,255,255,0.4);
+  filter: blur(4px);
+  animation: shimmer 2.8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%   { left: -40%; }
+  50%  { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* ------------------------------------------------------------
+   TAGLINE
+   ------------------------------------------------------------ */
+
 .hero-tagline {
   margin-top: 0.5rem;
-  font-size: 1.05rem;
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
   color: var(--text-secondary);
-  opacity: 0.85;
-  max-width: 600px;
+  opacity: 0.9;
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
+  line-height: 1.7;
+  animation: fadeUp 1.4s ease forwards;
 }
