@@ -1,9 +1,36 @@
-/* ABOUT PAGE — layout only */
+/* ============================================================
+   ABOUT PAGE — Cosmic Dark Academia
+   ============================================================ */
 
-.glass {
-  padding: 2rem;
+/* Wrapper */
+.about-wrapper {
+  margin: 5rem auto;
+  max-width: 900px;
 }
 
+/* Section titles */
 .about-section-title {
+  font-family: var(--font-serif);
   color: var(--accent);
+  font-size: 1.6rem;
+  margin: 3rem 0 0.5rem;
+  letter-spacing: 0.3px;
+  position: relative;
+}
+
+/* Paragraphs */
+.about-wrapper p {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1.2rem;
+}
+
+/* Optional: subtle fade-up stagger (matches your global motion system) */
+.about-wrapper .stagger > * {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: calc(var(--i) * 0.1s);
 }

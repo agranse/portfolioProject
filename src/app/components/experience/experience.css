@@ -1,67 +1,111 @@
-/* EXPERIENCE PAGE — collapsible cards + metadata */
+/* ============================================================
+   EXPERIENCE PAGE — Cosmic Glass Timeline Edition
+   ============================================================ */
 
-/* Section titles */
+/* ------------------------------------------------------------
+   SECTION TITLES
+   ------------------------------------------------------------ */
+
 .exp-section-title {
-  font-size: 1.2rem;
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
   font-weight: 600;
-  color: var(--text-primary);
-  margin: 0 0 1rem;
+  color: var(--accent);
+  margin: 2rem 0 0.75rem;
+  letter-spacing: 0.6px;
+  text-shadow: 0 0 12px rgba(212,185,138,0.25);
+  position: relative;
 }
 
-.exp-item {
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem
+.exp-section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.6;
+  border-radius: 2px;
 }
 
-/* Timeline wrapper (line disabled) */
+/* ------------------------------------------------------------
+   TIMELINE STRUCTURE
+   ------------------------------------------------------------ */
+
 .timeline {
   position: relative;
+  padding-left: 1rem;
 }
 
 .timeline::before {
-  content: none;
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  opacity: 0.35;
+  border-radius: 2px;
 }
 
-/* Toggle button */
+/* ------------------------------------------------------------
+   EXPERIENCE CARD
+   ------------------------------------------------------------ */
+
+.exp-item {
+  margin: 1.25rem 0;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 22px rgba(0,0,0,0.25);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.exp-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px rgba(0,0,0,0.35);
+}
+
+/* ------------------------------------------------------------
+   TOGGLE BUTTON
+   ------------------------------------------------------------ */
+
 .exp-toggle {
   width: 100%;
-  text-align: left;
-  padding: 1.25rem 1.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--accent);
+  padding: 1.4rem 1.6rem;
   background: none;
   border: none;
   cursor: pointer;
-  letter-spacing: 0.5px;
-  position: relative;
+
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
-  transition:
-    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.25s ease,
-    color 0.25s ease;
+  align-items: center;
+
+  text-align: left;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.4px;
+
+  position: relative;
+  transition: opacity 0.25s ease, color 0.25s ease;
 }
 
 .exp-toggle-right {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* space between years + arrow */
+  gap: 0.75rem;
 }
 
-
-.exp-toggle:hover {
-  opacity: 0.9;
-}
-
-/* Arrow rotation */
 .exp-arrow {
   font-size: 1.2rem;
   opacity: 0.7;
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .exp-toggle.open .exp-arrow {
@@ -69,45 +113,63 @@
   opacity: 1;
 }
 
-/* Underline hover animation */
+/* Gold underline hover */
 .exp-toggle::after {
   content: "";
   position: absolute;
-  left: 1.25rem;
-  bottom: 0.6rem;
+  left: 1.6rem;
+  bottom: 0.4rem;
   width: 0%;
   height: 2px;
   background: var(--accent);
-  border-radius: 2px;
   opacity: 0.7;
-  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 2px;
+  transition: width 0.4s ease;
 }
 
 .exp-toggle:hover::after {
   width: 55%;
 }
 
-/* Collapsible content */
+/* ------------------------------------------------------------
+   COLLAPSIBLE CONTENT
+   ------------------------------------------------------------ */
+
 .exp-content {
   max-height: 0;
   overflow: hidden;
-  padding: 0 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  transition:
-    max-height 0.35s ease,
-    padding 0.35s ease;
+  padding: 0 1.6rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  transition: max-height 0.35s ease;
   margin-bottom: 0.75rem;
 }
 
 .exp-content.open {
-  padding: 1rem 1.5rem 1.5rem;
+  padding: 1.2rem 1.6rem 1.6rem;
 }
 
-/* Fade-in list items */
+/* Metadata */
+.exp-dates {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+}
+
+/* Bullet list */
+.exp-content ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
 .exp-content ul li {
   opacity: 0;
   transform: translateY(4px);
-  transition: opacity 0.3s ease, transform 0.3s ease; 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-bottom: 0.4rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
 }
 
 .exp-content.open ul li {
@@ -115,25 +177,13 @@
   transform: translateY(0);
 }
 
-/* Divider */
+/* ------------------------------------------------------------
+   DIVIDER
+   ------------------------------------------------------------ */
+
 .exp-divider {
   border: none;
   height: 1px;
   background: rgba(255,255,255,0.08);
-  margin: 2rem 0 1.5rem;
-}
-
-/* Metadata */
-.exp-years {
-  font-size: 0.85rem;
-  opacity: 0.6;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.exp-dates {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-bottom: 0.75rem;
-  color: var(--text-secondary);
+  margin: 3rem 0 2rem;
 }
