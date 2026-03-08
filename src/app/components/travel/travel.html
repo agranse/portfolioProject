@@ -1,0 +1,31 @@
+<section class="travel-map">
+
+  <header class="travel-header">
+    <p class="eyebrow">Places I’ve been</p>
+    <h1>Travel as a series of scenes</h1>
+    <p class="lede">
+      Not a checklist. Not a map. Just the moments that stayed—light, sound, water, and the way a city moves.
+    </p>
+  </header>
+
+  <div class="map-wrapper">
+    <img src="assets/maps/world-authagraph-dark.png" alt="World map" class="map-image" />
+
+    <button
+      *ngFor="let country of visited"
+      class="map-star"
+      [style.left.%]="country.x"
+      [style.top.%]="country.y"
+      (click)="open(country)"
+    ></button>
+  </div>
+
+  <div class="popup" *ngIf="active">
+    <button class="popup-close" (click)="close()">×</button>
+    <img class="popup-photo" [src]="active.image" />
+    <h3>{{ active.label }}</h3>
+    <p class="popup-location">{{ active.name }}</p>
+    <p class="popup-blurb">{{ active.blurb }}</p>
+  </div>
+
+</section>

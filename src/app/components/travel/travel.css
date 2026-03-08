@@ -1,0 +1,103 @@
+:host {
+  display: block;
+  width: 100%;
+  color: #f5f3ff;
+}
+
+.travel-map {
+  padding: 6rem clamp(2rem, 6vw, 5rem);
+}
+
+/* Header */
+.travel-header {
+  max-width: 48rem;
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: #b3a6d4;
+}
+
+.travel-header h1 {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  text-transform: uppercase;
+  margin: 0.5rem 0 1rem;
+}
+
+.lede {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #c7bfdc;
+}
+
+/* Map */
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.map-image {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Stars */
+.map-star {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #f3d28b;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 8px #f3d28b;
+  transform: translate(-50%, -50%);
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(5, 4, 10, 0.92);
+  border: 1px solid rgba(243, 210, 139, 0.3);
+  backdrop-filter: blur(14px);
+  padding: 1rem;
+  border-radius: 14px;
+  width: 260px;
+  z-index: 10;
+}
+
+.popup-close {
+  background: none;
+  border: none;
+  color: #9a8fb8;
+  font-size: 1.2rem;
+  float: right;
+  cursor: pointer;
+}
+
+.popup-photo {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.popup-location {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 0.9rem;
+  color: #b3a6d4;
+}
+
+.popup-blurb {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d8d2ea;
+}
