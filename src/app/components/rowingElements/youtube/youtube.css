@@ -1,0 +1,22 @@
+.video-embed {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 56.25%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rowing-section-heading {
+  color: var(--accent);
+  text-align: center;
+  padding-bottom:2.5rem;
+}

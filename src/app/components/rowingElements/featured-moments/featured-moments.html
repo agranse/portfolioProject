@@ -1,0 +1,26 @@
+<section class="carousel-section fade-up">
+  <h3 class="rowing-section-heading">Featured Moments</h3>
+
+  <div class="carousel hover-lift"
+        (mouseenter)="pause()"
+        (mouseleave)="resume()">
+    <div class="carousel-image-wrapper">
+      <img
+        [src]="featuredImages[currentIndex]"
+        loading="lazy"
+        alt="Featured rowing photo"
+        class="carousel-image"
+      />
+    </div>
+  </div>
+
+  <div class="carousel-dots">
+    @for (img of featuredImages; track $index; let i = $index) {
+      <span
+        class="dot"
+        [class.active]="i === currentIndex"
+        (click)="goToImage(i)"
+      ></span>
+    }
+  </div>
+</section>

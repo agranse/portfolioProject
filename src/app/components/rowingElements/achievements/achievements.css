@@ -1,0 +1,57 @@
+.achievement-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.chip {
+  padding: 0.55rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+
+  color: var(--text-secondary);
+
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.chip:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.12);
+}
+
+.medal-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.medal-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255,255,255,0.25) 50%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.8s ease;
+}
+
+.medal-shimmer:hover::after {
+  transform: translateX(120%);
+}
+
+.rowing-section-heading {
+  color: var(--accent);
+  text-align: center;
+  padding-bottom:2.5rem;
+}

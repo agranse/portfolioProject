@@ -11,121 +11,31 @@
   <div class="section-divider fade-up"></div>
 
   <!-- ACTION SHOTS — FULL-BLEED CINEMATIC SCROLL -->
-  <section class="short-clips-section fade-up">
-
-    <h3 class="rowing-section-heading">Action Shots</h3>
-
-    <div
-      class="short-clips-track glass"
-      #actionTrack
-      (mousedown)="onDragStart($event)"
-      (mousemove)="onDragMove($event)"
-      (mouseup)="onDragEnd()"
-      (mouseleave)="onDragEnd()"
-      (wheel)="onWheelScroll($event)"
-    >
-      <div class="short-clip-card" *ngFor="let clip of actionClips">
-        <video autoplay muted loop playsinline preload="auto">
-          <source [src]="clip" type="video/mp4" />
-        </video>
-      </div>
-    </div>
-
-  </section>
+  <app-action-shots></app-action-shots>
 
   <div class="section-divider fade-up"></div>
 
   <!-- ACHIEVEMENTS -->
-  <section class="achievements-section fade-up">
-    <h3 class="rowing-section-heading">Highlights & Achievements</h3>
-
-    <div class="achievement-chips">
-      <span class="chip glass hover-lift fade-up medal-shimmer">Head of the Charles Medalist</span>
-      <span class="chip glass hover-lift fade-up medal-shimmer">5× Head of the Charles Competitor</span>
-      <span class="chip glass hover-lift fade-up medal-shimmer">College Varsity 8+</span>
-      <span class="chip glass hover-lift fade-up medal-shimmer">3× Bald Eagle Invitational Gold Medalist</span>
-      <span class="chip glass hover-lift fade-up medal-shimmer">College PR Coordinator</span>
-      <span class="chip glass hover-lift fade-up medal-shimmer">Junior Team Captain</span>
-      <span class="chip glass hover-lift fade-up medal-shimmer">Junior MVP</span>
-    </div>
-  </section>
+  <app-achievements></app-achievements>
 
   <div class="section-divider fade-up"></div>
 
   <!-- FEATURED CAROUSEL -->
-  <section class="carousel-section fade-up">
-    <h3 class="rowing-section-heading">Featured Moments</h3>
-
-    <div class="carousel glass hover-lift"
-         (mouseenter)="pause()"
-         (mouseleave)="resume()">
-      <div class="carousel-image-wrapper">
-        <img
-          [src]="featuredImages[currentIndex]"
-          loading="lazy"
-          alt="Featured rowing photo"
-          class="carousel-image"
-        />
-      </div>
-    </div>
-
-    <div class="carousel-dots">
-      <span
-        *ngFor="let img of featuredImages; let i = index"
-        class="dot"
-        [class.active]="i === currentIndex"
-        (click)="goToImage(i)"
-      ></span>
-    </div>
-  </section>
+  <app-featured-moments></app-featured-moments>
 
   <div class="section-divider fade-up"></div>
 
   <!-- TIMELINE -->
-  <section class="timeline-section fade-up">
-    <h3 class="rowing-section-heading">Rowing Journey</h3>
-
-    <div class="timeline-wrapper">
-      <div class="timeline-line"></div>
-
-      <div class="timeline-content">
-        <div class="timeline-entry fade-up" *ngFor="let entry of timeline">
-          <span class="year">{{ entry.year }}</span>
-          <p *ngFor="let line of entry.text">{{ line }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-timeline></app-timeline>
 
   <div class="section-divider fade-up"></div>
 
   <!-- RACE FOOTAGE -->
-  <section class="video-section fade-up">
-    <h3 class="rowing-section-heading">Race Footage</h3>
-
-    <div class="video-embed glass hover-lift fade-up">
-      <iframe
-        src="https://www.youtube.com/embed/d99XQvWL4yk"
-        title="Head of the Charles — Coxswain Seat"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <p class="video-caption">Head of the Charles — Coxswain Seat</p>
-  </section>
+  <app-youtube></app-youtube>
 
   <div class="section-divider fade-up"></div>
 
   <!-- GALLERY -->
-  <section class="gallery-section fade-up">
-    <h3 class="rowing-section-heading">Gallery</h3>
-
-    <div class="gallery-grid">
-      <div class="gallery-item fade-up" *ngFor="let img of galleryImages">
-        <img [src]="img" alt="Rowing photo" />
-      </div>
-    </div>
-  </section>
+  <app-gallery></app-gallery>
 
 </div>

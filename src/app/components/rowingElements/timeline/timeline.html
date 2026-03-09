@@ -1,0 +1,18 @@
+<section class="timeline-section fade-up">
+  <h3 class="rowing-section-heading">Rowing Journey</h3>
+
+  <div class="timeline-wrapper">
+    <div class="timeline-line"></div>
+
+    <div class="timeline-content">
+      @for (entry of timeline; track entry.year) {
+        <div class="timeline-entry fade-up">
+          <span class="year">{{ entry.year }}</span>
+          @for (line of entry.text; track $index) {
+            <p>{{ line }}</p>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>

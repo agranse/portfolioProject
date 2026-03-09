@@ -1,0 +1,23 @@
+<section class="short-clips-section fade-up">
+
+  <h3 class="rowing-section-heading">Action Shots</h3>
+
+  <div
+    class="short-clips-track glass"
+    #actionTrack
+    (mousedown)="onDragStart($event)"
+    (mousemove)="onDragMove($event)"
+    (mouseup)="onDragEnd()"
+    (mouseleave)="onDragEnd()"
+    (wheel)="onWheelScroll($event)"
+  >
+    @for (clip of actionClips; track clip) {
+      <div class="short-clip-card">
+        <video autoplay muted loop playsinline preload="auto">
+          <source [src]="clip" type="video/mp4" />
+        </video>
+      </div>
+    }
+  </div>
+
+</section>

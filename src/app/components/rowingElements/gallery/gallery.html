@@ -1,0 +1,17 @@
+<section class="gallery-section fade-up full-bleed-gallery">
+  <h3 class="rowing-section-heading">Gallery</h3>
+  <div class="masonry-grid" [class.has-selection]="selected !== null">
+    @for (img of galleryImages; track img; let i = $index) {
+      <div 
+        class="masonry-item" 
+        [class.expanded]="selected === i"
+        (click)="toggle(i)"
+        [style.--i]="i"
+      >
+        <div class="expanded-frame">
+          <img [src]="img" alt="Rowing photo" />
+        </div>
+      </div>
+    }
+  </div>
+</section>
