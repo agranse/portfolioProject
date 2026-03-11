@@ -49,9 +49,3 @@
 .medal-shimmer:hover::after {
   transform: translateX(120%);
 }
-
-.rowing-section-heading {
-  color: var(--accent);
-  text-align: center;
-  padding-bottom:2.5rem;
-}

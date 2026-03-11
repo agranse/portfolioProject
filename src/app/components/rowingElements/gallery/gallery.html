@@ -1,15 +1,22 @@
 <section class="gallery-section fade-up full-bleed-gallery">
   <h3 class="rowing-section-heading">Gallery</h3>
   <div class="masonry-grid" [class.has-selection]="selected !== null">
-    @for (img of galleryImages; track img; let i = $index) {
-      <div 
-        class="masonry-item" 
+    @for (img of galleryImages; track i; let i = $index) {
+      <div
+        class="masonry-item"
         [class.expanded]="selected === i"
         (click)="toggle(i)"
-        [style.--i]="i"
+        [attr.data-i]="i"
       >
         <div class="expanded-frame">
-          <img [src]="img" loading="lazy" alt="Rowing photo" />
+          <img
+            [src]="img"
+            loading="lazy"
+            decoding="async"
+            [attr.fetchpriority]="selected === i ? 'high' : 'auto'"
+            [attr.decoding]="selected === i ? 'sync' : 'async'"
+            alt="Rowing photo"
+          />
         </div>
       </div>
     }

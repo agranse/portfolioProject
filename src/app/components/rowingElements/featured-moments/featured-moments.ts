@@ -22,7 +22,9 @@ export class FeaturedMoments {
   featuredImages: string[] = [
     'assets/rowingPhotos/photo1.jpg',
     'assets/rowingPhotos/photo15.jpg',
-    'assets/rowingPhotos/photo30.jpg'
+    'assets/rowingPhotos/photo30.jpg',
+    'assets/rowingPhotos/photo11.jpg',
+    'assets/rowingPhotos/photo23.jpg',
   ];
 constructor(private cdr: ChangeDetectorRef) {}
   currentIndex = 0;

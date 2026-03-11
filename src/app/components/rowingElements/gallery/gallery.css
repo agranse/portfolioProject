@@ -29,13 +29,13 @@
   cursor: pointer;
   position: relative;
   transition: transform 0.35s ease;
-}
-
-.masonry-item {
   opacity: 0;
   transform: translateY(12px);
   animation: fadeUp 0.7s ease forwards;
   animation-delay: calc(var(--i) * 0.06s);
+  content-visibility: auto;
+  contain-intrinsic-size: 300px 200px;
+
 }
 
 @keyframes fadeUp {
