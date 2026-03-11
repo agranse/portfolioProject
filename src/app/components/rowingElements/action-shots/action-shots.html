@@ -1,6 +1,5 @@
 <section class="short-clips-section fade-up">
   <h3 class="rowing-section-heading">Action Shots</h3>
-
   <div
     class="short-clips-track glass"
     #actionTrack
@@ -12,9 +11,15 @@
   >
     @for (clip of actionClips; track $index) {
       <div class="short-clip-card">
-        <video autoplay muted loop playsinline preload="none">
-          <source [src]="clip" type="video/mp4" />
-        </video>
+        <video
+          #autoVideo
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          [attr.data-webm]="clip.webm"
+          [attr.data-mp4]="clip.mp4"
+        ></video>
       </div>
     }
   </div>
