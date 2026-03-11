@@ -24,11 +24,10 @@ export class ActionShots {
 
   // --- CLIPS ---
   baseClips: string[] = [
-    'assets/rowingVideos/video6.mp4',
-    'assets/rowingVideos/video7.mp4',
-    'assets/rowingVideos/video9.mp4',
-    'assets/rowingVideos/video3.mp4',
-    'assets/rowingVideos/video10.mp4',
+    'assets/rowingVideos/vid1.mp4',
+    'assets/rowingVideos/vid2.mp4',
+    'assets/rowingVideos/vid3.mp4',
+    'assets/rowingVideos/vid4.mp4'
   ];
 
   actionClips = [...this.baseClips, ...this.baseClips];
