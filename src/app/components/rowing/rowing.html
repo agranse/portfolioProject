@@ -10,32 +10,32 @@
 
   <div class="section-divider fade-up"></div>
 
-  <!-- ACTION SHOTS — FULL-BLEED CINEMATIC SCROLL -->
-  <app-action-shots></app-action-shots>
+  <ng-container *ngIf="showActionShots">
+    <app-action-shots></app-action-shots>
+  </ng-container>
 
   <div class="section-divider fade-up"></div>
 
-  <!-- ACHIEVEMENTS -->
   <app-achievements></app-achievements>
 
   <div class="section-divider fade-up"></div>
 
-  <!-- FEATURED CAROUSEL -->
+  <ng-container *ngIf="showFeatured">
   <app-featured-moments></app-featured-moments>
+  </ng-container>
 
   <div class="section-divider fade-up"></div>
 
-  <!-- TIMELINE -->
   <app-timeline></app-timeline>
 
   <div class="section-divider fade-up"></div>
 
-  <!-- RACE FOOTAGE -->
   <app-youtube></app-youtube>
 
   <div class="section-divider fade-up"></div>
 
-  <!-- GALLERY -->
+  <ng-container *ngIf="showGallery">
   <app-gallery></app-gallery>
+  </ng-container>
 
 </div>

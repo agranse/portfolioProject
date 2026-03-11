@@ -25,4 +25,27 @@ import { Youtube } from "../rowingElements/youtube/youtube";
   styleUrls: ['./rowing.css']
 })
 export class Rowing {
+  showActionShots = false;
+  showFeatured = false;
+  showGallery = false;
+
+  ngAfterViewInit() {
+    this.observeSection('.action-shots-section', () => this.showActionShots = true);
+    this.observeSection('.featured-section', () => this.showFeatured = true);
+    this.observeSection('.gallery-section', () => this.showGallery = true);
+  }
+
+  private observeSection(selector: string, callback: () => void) {
+    const el = document.querySelector(selector);
+    if (!el) return;
+
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        callback();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(el);
+  }
 }
