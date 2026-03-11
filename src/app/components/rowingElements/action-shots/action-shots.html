@@ -12,7 +12,7 @@
   >
     @for (clip of actionClips; track $index) {
       <div class="short-clip-card">
-        <video autoplay muted loop playsinline preload="auto">
+        <video autoplay muted loop playsinline preload="none">
           <source [src]="clip" type="video/mp4" />
         </video>
       </div>
