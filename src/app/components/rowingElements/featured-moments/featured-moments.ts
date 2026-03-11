@@ -21,8 +21,8 @@ export class FeaturedMoments {
 
   featuredImages: string[] = [
     'assets/rowingPhotos/photo1.jpg',
-    'assets/rowingPhotos/photo35.jpg',
     'assets/rowingPhotos/photo15.jpg',
+    'assets/rowingPhotos/photo30.jpg'
   ];
 constructor(private cdr: ChangeDetectorRef) {}
   currentIndex = 0;

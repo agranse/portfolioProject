@@ -8,78 +8,100 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class ActionShots {
 
+  @ViewChild('actionTrack', { static: false })
+  actionTrack!: ElementRef<HTMLDivElement>;
+
+  // --- CONFIG ---
+  private scrollSpeed = 0.6;
+  private autoScrollInterval: any;
+  private wheelTimeout: any;
+
+  // --- STATE ---
+  private isDragging = false;
+  private isUserInteracting = false;
+  private dragStartX = 0;
+  private scrollStartX = 0;
+
+  // --- CLIPS ---
+  baseClips: string[] = [
+    'assets/rowingVideos/video6.mp4',
+    'assets/rowingVideos/video7.mp4',
+    'assets/rowingVideos/video9.mp4',
+    'assets/rowingVideos/video3.mp4',
+    'assets/rowingVideos/video10.mp4',
+  ];
+
+  actionClips = [...this.baseClips, ...this.baseClips];
+
+
+  // --- LIFECYCLE ---
   ngAfterViewInit() {
-    this.startAutoScroll();
+    setTimeout(() => {
+      const el = this.actionTrack.nativeElement;
+
+      // Start in the middle of the duplicated list for seamless looping
+      const midpoint = el.scrollWidth / 2;
+      el.scrollLeft = midpoint / 2;
+
+      this.startAutoScroll();
+    });
   }
 
-  startAutoScroll() {
-    if (!this.actionTrack) return;
+  // --- AUTO SCROLL ---
+  private startAutoScroll() {
+    const el = this.actionTrack.nativeElement;
 
     this.autoScrollInterval = setInterval(() => {
       if (this.isUserInteracting) return;
 
-      const el = this.actionTrack.nativeElement;
-      el.scrollLeft += 0.6;
+      // Move RIGHT → LEFT
+      el.scrollLeft -= this.scrollSpeed;
 
-      if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
-        el.scrollLeft = 0;
+      const midpoint = el.scrollWidth / 2;
+
+      // When we cross the left boundary of the first set,
+      // jump forward by one full set (invisible to the user)
+      if (el.scrollLeft <= 0) {
+        el.scrollLeft += midpoint;
       }
     }, 16);
   }
 
-  actionClips: string[] = [
-    'assets/rowingVideos/video3_fixed.mp4',
-    'assets/rowingVideos/video1_fixed.mp4',
-    'assets/rowingVideos/video4_fixed.mp4',
-    'assets/rowingVideos/video5_fixed.mp4',
-    'assets/rowingVideos/video6_fixed.mp4',
-    'assets/rowingVideos/video7_fixed.mp4'
-  ];
 
-  @ViewChild('actionTrack', { static: false })
-  actionTrack!: ElementRef<HTMLDivElement>;
-
-  private isDragging = false;
-  private dragStartX = 0;
-  private scrollStartX = 0;
-
-  private autoScrollInterval: any;
-  private wheelTimeout: any;
-  isUserInteracting = false;
-
+  // --- DRAG INTERACTION ---
   onDragStart(event: MouseEvent) {
-    if (!this.actionTrack) return;
-
     this.isUserInteracting = true;
     this.isDragging = true;
 
+    const el = this.actionTrack.nativeElement;
     this.dragStartX = event.clientX;
-    this.scrollStartX = this.actionTrack.nativeElement.scrollLeft;
+    this.scrollStartX = el.scrollLeft;
 
-    this.actionTrack.nativeElement.classList.add('dragging');
+    el.classList.add('dragging');
   }
 
   onDragMove(event: MouseEvent) {
-    if (!this.isDragging || !this.actionTrack) return;
+    if (!this.isDragging) return;
 
+    const el = this.actionTrack.nativeElement;
     const delta = event.clientX - this.dragStartX;
-    this.actionTrack.nativeElement.scrollLeft = this.scrollStartX - delta;
+    el.scrollLeft = this.scrollStartX - delta;
   }
 
   onDragEnd() {
-    if (!this.actionTrack) return;
-
     this.isDragging = false;
     this.isUserInteracting = false;
 
     this.actionTrack.nativeElement.classList.remove('dragging');
   }
 
+
+  // --- WHEEL INTERACTION ---
   onWheelScroll(event: WheelEvent) {
-    if (!this.actionTrack) return;
+    const el = this.actionTrack.nativeElement;
 
     this.isUserInteracting = true;
-    this.actionTrack.nativeElement.scrollLeft += event.deltaY;
+    el.scrollLeft += event.deltaY;
 
     clearTimeout(this.wheelTimeout);
     this.wheelTimeout = setTimeout(() => {

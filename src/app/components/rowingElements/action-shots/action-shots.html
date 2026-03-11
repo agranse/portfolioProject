@@ -1,5 +1,4 @@
 <section class="short-clips-section fade-up">
-
   <h3 class="rowing-section-heading">Action Shots</h3>
 
   <div
@@ -11,7 +10,7 @@
     (mouseleave)="onDragEnd()"
     (wheel)="onWheelScroll($event)"
   >
-    @for (clip of actionClips; track clip) {
+    @for (clip of actionClips; track $index) {
       <div class="short-clip-card">
         <video autoplay muted loop playsinline preload="auto">
           <source [src]="clip" type="video/mp4" />
@@ -19,5 +18,4 @@
       </div>
     }
   </div>
-
 </section>

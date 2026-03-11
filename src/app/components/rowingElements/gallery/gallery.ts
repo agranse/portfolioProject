@@ -8,33 +8,42 @@ import { Component } from '@angular/core';
 export class Gallery {
   selected: number | null = null;
   galleryImages: string[] = [
-    'assets/rowingPhotos/photo26.jpg',
-    'assets/rowingPhotos/photo36.jpg',
+    // 'assets/rowingPhotos/photo1.jpg',
     'assets/rowingPhotos/photo2.jpg',
     'assets/rowingPhotos/photo3.jpg',
     'assets/rowingPhotos/photo4.jpg',
     'assets/rowingPhotos/photo5.jpg',
     'assets/rowingPhotos/photo6.jpg',
     'assets/rowingPhotos/photo7.jpg',
+    'assets/rowingPhotos/photo8.jpg',
     'assets/rowingPhotos/photo9.jpg',
+    'assets/rowingPhotos/photo10.jpg',
+    'assets/rowingPhotos/photo11.jpg',
+    'assets/rowingPhotos/photo12.jpg',
+    'assets/rowingPhotos/photo13.jpg',
+    'assets/rowingPhotos/photo14.jpg',
+    // 'assets/rowingPhotos/photo15.jpg',
     'assets/rowingPhotos/photo16.jpg',
     'assets/rowingPhotos/photo17.jpg',
-    'assets/rowingPhotos/photo28.jpg',
-    'assets/rowingPhotos/photo30.jpg',
-    'assets/rowingPhotos/photo32.jpg',
-    'assets/rowingPhotos/photo34.jpg',
-    'assets/rowingPhotos/photo37.jpg',
-    'assets/rowingPhotos/photo41.jpg',
-    'assets/rowingPhotos/photo12.jpg',
     'assets/rowingPhotos/photo18.jpg',
-    'assets/rowingPhotos/photo33.jpg',
-    'assets/rowingPhotos/photo8.jpg'
+    'assets/rowingPhotos/photo19.jpg',
+    'assets/rowingPhotos/photo20.jpg',
+    'assets/rowingPhotos/photo21.jpg',
+    'assets/rowingPhotos/photo22.jpg',
+    'assets/rowingPhotos/photo23.jpg',
+    'assets/rowingPhotos/photo24.jpg',
+    'assets/rowingPhotos/photo25.jpg',
+    'assets/rowingPhotos/photo26.jpg',
+    'assets/rowingPhotos/photo27.jpg',
+    'assets/rowingPhotos/photo28.jpg',
+    'assets/rowingPhotos/photo29.jpg',
+    // 'assets/rowingPhotos/photo30.jpg'
   ];
 
   getColumnCount(): number {
     const grid = document.querySelector('.masonry-grid');
-    if (!grid) return 3; // fallback
-    const columnWidth = 220; // same as your CSS
+    if (!grid) return 3;
+    const columnWidth = 220;
     const totalWidth = grid.clientWidth;
     return Math.max(1, Math.floor(totalWidth / columnWidth));
   }
