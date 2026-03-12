@@ -36,5 +36,47 @@
 .rowing-section-heading {
   color: var(--accent);
   text-align: center;
-  padding-bottom:2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .timeline-wrapper {
+    gap: 1.5rem;
+    grid-template-columns: 32px 1fr;
+  }
+
+  .timeline-entry .year {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .timeline-wrapper {
+    grid-template-columns: 24px 1fr;
+    gap: 1.2rem;
+    padding: 0 0.5rem;
+  }
+
+  .timeline-line {
+    width: 2px;
+  }
+
+  .timeline-entry {
+    padding-left: 0.25rem;
+  }
+
+  .timeline-entry .year {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .timeline-wrapper {
+    grid-template-columns: 18px 1fr;
+    gap: 1rem;
+  }
+
+  .timeline-entry .year {
+    font-size: 0.9rem;
+  }
 }

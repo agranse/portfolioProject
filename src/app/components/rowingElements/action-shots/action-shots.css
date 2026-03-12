@@ -53,3 +53,33 @@
   text-align: center;
   padding-bottom: 2.5rem;
 }
+
+@media (max-width: 900px) {
+  .short-clips-track {
+    gap: 1rem;
+    padding: 0.75rem 0;
+  }
+
+  .short-clip-card {
+    width: 340px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .short-clips-track {
+    gap: 0.8rem;
+  }
+
+  .short-clip-card {
+    width: 280px;
+    height: 165px;
+  }
+}
+
+@media (max-width: 420px) {
+  .short-clip-card {
+    width: 240px;
+    height: 140px;
+  }
+}

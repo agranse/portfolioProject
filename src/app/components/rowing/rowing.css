@@ -16,7 +16,7 @@ section {
 }
 
 .title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 6vw, 3rem);
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -24,7 +24,7 @@ section {
 .subtitle {
   opacity: 0.85;
   line-height: 1.6;
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 3.5vw, 1.15rem);
 }
 
 .section-divider {
@@ -67,12 +67,17 @@ section {
 @media (max-width: 900px) {
   .a-f-container {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
 
   .achievements-column {
     border-left: none;
     padding-left: 0;
+  }
+
+  .carousel-column,
+  .achievements-column {
+    padding-inline: 0.5rem;
   }
 }
 

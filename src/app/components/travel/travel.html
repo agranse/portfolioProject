@@ -1,13 +1,10 @@
 <section class="travel-map">
-
   <header class="travel-header">
     <p class="eyebrow">- WORK IN PROGRESS -</p>
     <h1>Travel as a series of scenes</h1>
   </header>
-
   <div class="map-wrapper">
     <img src="assets/maps/world-authagraph-dark.png" alt="World map" class="map-image" />
-
     <button
       *ngFor="let country of visited"
       class="map-star"
@@ -16,7 +13,6 @@
       (click)="open(country)"
     ></button>
   </div>
-
   <div class="popup" *ngIf="active">
     <button class="popup-close" (click)="close()">×</button>
     <img class="popup-photo" [src]="active.image" />
@@ -24,5 +20,4 @@
     <p class="popup-location">{{ active.name }}</p>
     <p class="popup-blurb">{{ active.blurb }}</p>
   </div>
-
 </section>

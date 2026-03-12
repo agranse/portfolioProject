@@ -1,6 +1,4 @@
-<!-- TAB BAR -->
 <div class="skills-tabs fade-up stagger" role="tablist">
-
   <button
     class="skills-tab"
     role="tab"
@@ -12,7 +10,6 @@
     <i class="bi bi-cpu"></i>
     Technical
   </button>
-
   <button
     class="skills-tab"
     role="tab"
@@ -24,7 +21,6 @@
     <i class="bi bi-briefcase"></i>
     Professional
   </button>
-
   <button
     class="skills-tab"
     role="tab"
@@ -36,12 +32,8 @@
     <i class="bi bi-mortarboard"></i>
     Academic
   </button>
-
 </div>
-
-<!-- CONTENT PANEL -->
 <div class="skills-content-wrapper">
-
   <div
     class="skills-content"
     *ngIf="activeTab !== null"
@@ -49,10 +41,8 @@
     role="tabpanel"
   >
     <h2 class="skills-content-title">{{ activeSkillTitle }}</h2>
-
     <div class="skill-group" *ngFor="let group of activeSkillGroups">
       <h4 class="skill-group-title">{{ group.title }}</h4>
-
       <div class="skill-tags">
         <span
           class="skill-tag"
@@ -63,7 +53,5 @@
         </span>
       </div>
     </div>
-
   </div>
-
 </div>

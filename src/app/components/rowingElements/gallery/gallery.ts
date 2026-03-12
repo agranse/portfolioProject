@@ -44,9 +44,6 @@ export class Gallery {
   toggle(i: number) {
     const wasSelected = this.selected === i;
     this.selected = wasSelected ? null : i;
-
-    // Smoothly bring the clicked item to center of viewport.
-    // We use a microtask to run after the DOM updates (class changes).
     queueMicrotask(() => {
       const el = document.querySelector<HTMLElement>(`.masonry-item[data-i="${i}"]`);
       el?.scrollIntoView({
@@ -57,22 +54,15 @@ export class Gallery {
     });
   }
 
-  // ---------- Optional: keyboard support for better UX ----------
-
   @HostListener('window:keydown', ['$event'])
   onKeydown(e: KeyboardEvent) {
     if (this.selected === null) {
-      // If nothing is selected, only react to Enter on a focused item if you add focus handling.
       return;
     }
-
-    // Close on Escape
     if (e.key === 'Escape') {
       this.selected = null;
       return;
     }
-
-    // Navigate selection with arrow keys
     if (e.key === 'ArrowRight') {
       e.preventDefault();
       this.moveSelection(1);
@@ -84,17 +74,12 @@ export class Gallery {
 
   private moveSelection(delta: number) {
     if (this.selected === null) return;
-
     const total = this.galleryImages.length;
     let next = this.selected + delta;
-
-    // Clamp to bounds (or wrap if you prefer)
     if (next < 0) next = 0;
     if (next > total - 1) next = total - 1;
-
     this.selected = next;
 
-    // Scroll the newly selected tile into view
     queueMicrotask(() => {
       const el = document.querySelector<HTMLElement>(`.masonry-item[data-i="${next}"]`);
       el?.scrollIntoView({
@@ -104,5 +89,4 @@ export class Gallery {
       });
     });
   }
-
 }

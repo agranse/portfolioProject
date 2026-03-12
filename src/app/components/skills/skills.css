@@ -1,7 +1,3 @@
-/* ============================================================
-   COSMIC CONSTELLATION TABS — LAYOUT & GLOW
-   ============================================================ */
-
 .skills-tabs {
   display: flex;
   justify-content: center;
@@ -27,10 +23,6 @@
   z-index: -1;
 }
 
-/* ============================================================
-   TAB BUTTONS
-   ============================================================ */
-
 .skills-tab {
   background: none;
   border: none;
@@ -42,7 +34,6 @@
   padding-bottom: 0.3rem;
   position: relative;
 
-  /* fade-up stagger */
   opacity: 0;
   transform: translateY(14px);
   animation: fadeUp 0.8s ease forwards;
@@ -51,7 +42,6 @@
   transition: transform 0.25s ease, text-shadow 0.25s ease;
 }
 
-/* Constellation dot */
 .skills-tab::before {
   content: "";
   position: absolute;
@@ -65,7 +55,6 @@
   box-shadow: 0 0 10px rgba(212,185,138,0.6);
 }
 
-/* Constellation vertical line */
 .skills-tab::after {
   content: "";
   position: absolute;
@@ -79,13 +68,11 @@
   transition: all 0.3s ease;
 }
 
-/* Hover shimmer */
 .skills-tab:hover {
   text-shadow: 0 0 12px rgba(212,185,138,0.4);
   transform: translateY(-2px);
 }
 
-/* Active underline */
 .skills-tab.active::after {
   width: 100%;
   height: 2px;
@@ -95,7 +82,6 @@
   opacity: 0.8;
 }
 
-/* Optional hint text */
 .skills-hint {
   text-align: center;
   color: var(--text-secondary);
@@ -106,10 +92,6 @@
   letter-spacing: 0.5px;
   font-family: var(--font-serif);
 }
-
-/* ============================================================
-   CONTENT AREA — WRAPPER & GLOW
-   ============================================================ */
 
 .skills-content-wrapper {
   margin-top: 3rem;
@@ -130,10 +112,6 @@
   opacity: 0.25;
 }
 
-/* ============================================================
-   CONTENT PANEL
-   ============================================================ */
-
 .skills-content {
   max-width: 700px;
   width: 100%;
@@ -145,11 +123,8 @@
   box-shadow: 0 0 22px rgba(0,0,0,0.25);
   position: relative;
   overflow: hidden;
-
-  /* Angular animation handles fade-in */
 }
 
-/* Nebula glow */
 .skills-content::before {
   content: "";
   position: absolute;
@@ -163,10 +138,6 @@
   opacity: 0.35;
   z-index: -1;
 }
-
-/* ============================================================
-   CONTENT TYPOGRAPHY
-   ============================================================ */
 
 .skills-content-title {
   font-family: var(--font-serif);
@@ -198,10 +169,6 @@
   margin-bottom: 0.6rem;
 }
 
-/* ============================================================
-   TAGS
-   ============================================================ */
-
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
@@ -228,10 +195,6 @@
   background: rgba(255,255,255,0.15);
 }
 
-/* ============================================================
-   ANIMATIONS
-   ============================================================ */
-
 @keyframes fadeUp {
   to {
     opacity: 1;
@@ -243,5 +206,99 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .skills-tabs {
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .skills-tab {
+    font-size: 1.4rem;
+  }
+
+  .skills-tabs::before {
+    width: 600px;
+    height: 350px;
+    top: -60px;
+  }
+
+  .skills-content {
+    padding: 1.6rem;
+  }
+
+  .skills-content::before {
+    width: 700px;
+    height: 700px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-tabs {
+    gap: 1.4rem;
+  }
+
+  .skills-tab {
+    font-size: 1.2rem;
+  }
+
+  .skills-tab::before {
+    top: -14px;
+    width: 5px;
+    height: 5px;
+  }
+
+  .skills-tab::after {
+    height: 18px;
+  }
+
+  .skills-tabs::before {
+    width: 450px;
+    height: 280px;
+    top: -50px;
+  }
+
+  .skills-content {
+    padding: 1.3rem;
+    border-radius: 12px;
+  }
+
+  .skills-content-title {
+    font-size: 1.7rem;
+  }
+
+  .skill-group-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .skills-tabs {
+    gap: 1rem;
+  }
+
+  .skills-tab {
+    font-size: 1.05rem;
+    letter-spacing: 0.4px;
+  }
+
+  .skills-tab::before {
+    top: -12px;
+    width: 4px;
+    height: 4px;
+  }
+
+  .skills-tab::after {
+    height: 14px;
+  }
+
+  .skills-content {
+    padding: 1.1rem;
+  }
+
+  .skills-content-title {
+    font-size: 1.5rem;
   }
 }
