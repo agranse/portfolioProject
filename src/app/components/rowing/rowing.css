@@ -9,25 +9,10 @@ section {
   padding: 1rem 0;
 }
 
-.section-divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(255,255,255,0.12),
-    transparent
-  );
-  margin: 0;
-  padding: 0rem;
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards;
-}
-
 .rowing-section-heading {
   color: var(--accent);
   text-align: center;
-  padding-bottom:2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .title {
@@ -42,26 +27,69 @@ section {
   font-size: 1.15rem;
 }
 
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.12),
+    transparent
+  );
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
 .a-f-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 3fr 2fr;
+  gap: clamp(1.25rem, 3vw, 3rem);
   align-items: start;
-  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
   padding-inline: clamp(1rem, 4vw, 3rem);
 }
 
-/* Mobile fallback: stack naturally */
-@media (max-width: 900px) {
+@media (min-width: 900px) {
   .a-f-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    column-gap: clamp(2rem, 5vw, 4rem);
+  }
+
+  .achievements-column {
+    border-left: 1px solid rgba(255,255,255,0.08);
+    padding-left: clamp(1rem, 3vw, 2rem);
   }
 }
 
-/* Make one section escape any parent .container and span viewport */
+@media (max-width: 900px) {
+  .a-f-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .achievements-column {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+.carousel-column,
+.achievements-column {
+  min-width: 0;
+  padding-right: 0;
+}
+
+.carousel-column img,
+.carousel-column video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+}
+
 .full-bleed {
   --gutter: clamp(1rem, 4vw, 3rem);
   position: relative;
@@ -73,76 +101,11 @@ section {
   padding-inline: var(--gutter);
 }
 
-/* Keep content nicely centered and capped inside the full-bleed */
 .full-bleed .a-f-container {
-  max-width: 1400px;                 /* tune between 1200–1440 */
+  max-width: 1400px;
   margin-inline: auto;
 }
 
-/* Your existing grid is good; keep or tweak */
-.a-f-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(1.25rem, 3vw, 3rem);
-  align-items: start;
-  width: 100%;
-  padding-inline: 0; /* gutters now come from .full-bleed */
-}
-
-/* Help prevent grid overflow and make media fluid */
-.carousel-column,
-.achievements-column {
-  min-width: 0; /* critical to allow children to shrink in grid cells */
-  padding-right: 0;
-}
-
-.carousel-column img,
-.carousel-column video {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  border-radius: var(--radius-lg);
-  padding-right: 0;
-}
-
-/* Optional: subtle column divider on desktop */
-@media (min-width: 900px) {
-  .a-f-container {
-    column-gap: clamp(2rem, 5vw, 4rem);
-  }
-  .achievements-column {
-    border-left: 1px solid rgba(255,255,255,0.08);
-    padding-left: clamp(1rem, 3vw, 2rem);
-  }
-}
-
-/* Mobile: stack naturally */
-@media (max-width: 900px) {
-  .a-f-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  .achievements-column {
-    border-left: none;
-    padding-left: 0;
-  }
-}
-
-/* Make carousel column larger than achievements (e.g., 3:2 ratio) */
-.a-f-container {
-  display: grid;
-  grid-template-columns: 3fr 2fr; /* was 1fr 1fr */
-  gap: clamp(1.25rem, 3vw, 3rem);
-  align-items: start;
-}
-
-/* Ensure children can actually use the space */
-.carousel-column,
-.achievements-column {
-  min-width: 0;
-  padding-right: 0;
-}
-
-.carousel-coulumn {
+.carousel-column {
   padding-right: 0;
 }
