@@ -22,11 +22,11 @@ export class ActionShots implements AfterViewInit {
   private isAppending = false;
 
   baseClips = [
-    { webm: 'assets/rowingVideos/vid1.webm', mp4: 'assets/rowingVideos/vid1.mp4', poster: 'assets/rowingVideos/posters/vid1.jpg' },
-    { webm: 'assets/rowingVideos/vid4.webm', mp4: 'assets/rowingVideos/vid4.mp4', poster: 'assets/rowingVideos/posters/vid4.jpg' },
-    { webm: 'assets/rowingVideos/vid2.webm', mp4: 'assets/rowingVideos/vid2.mp4', poster: 'assets/rowingVideos/posters/vid2.jpg' },
-    { webm: 'assets/rowingVideos/vid5.webm', mp4: 'assets/rowingVideos/vid5.mp4', poster: 'assets/rowingVideos/posters/vid5.jpg' },
-    { webm: 'assets/rowingVideos/vid3.webm', mp4: 'assets/rowingVideos/vid3.mp4', poster: 'assets/rowingVideos/posters/vid3.jpg' },
+    { mp4: 'assets/rowingVideos/vid1.mp4', poster: 'assets/rowingVideos/posters/vid1.jpg' },
+    { mp4: 'assets/rowingVideos/vid4.mp4', poster: 'assets/rowingVideos/posters/vid4.jpg' },
+    { mp4: 'assets/rowingVideos/vid2.mp4', poster: 'assets/rowingVideos/posters/vid2.jpg' },
+    { mp4: 'assets/rowingVideos/vid5.mp4', poster: 'assets/rowingVideos/posters/vid5.jpg' },
+    { mp4: 'assets/rowingVideos/vid3.mp4', poster: 'assets/rowingVideos/posters/vid3.jpg' },
   ];
 
   actionClips = [...this.baseClips, ...this.baseClips, ...this.baseClips, ...this.baseClips, ...this.baseClips];

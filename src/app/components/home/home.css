@@ -135,7 +135,8 @@
 
 @media (max-width: 420px) {
   .hero {
-    padding: 4rem 1rem 3.5rem;
+    padding: 3.2rem 1rem 3rem;
+    backdrop-filter: blur(2px);
   }
 
   .hero::before {
@@ -202,4 +203,46 @@
 @keyframes mountainDrift {
   from { transform: translateX(0); }
   to   { transform: translateX(-18px); }
+}
+
+@media (max-width: 600px) {
+  .hero-mountain-svg {
+    top: 60%;
+    height: 160px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-mountain-svg {
+    top: 62%;
+    height: 140px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-title {
+    font-size: 1.85rem;
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero::before {
+    width: 300px;
+    height: 300px;
+    top: -6%;
+    opacity: 0.28;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-tagline {
+    max-width: 300px;
+    line-height: 1.55;
+  }
 }
