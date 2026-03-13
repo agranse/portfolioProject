@@ -158,10 +158,6 @@
   }
 }
 
-
-
-/* mountains */
-
 .hero-mountain-svg {
   position: absolute;
   top: 55%;
@@ -170,32 +166,15 @@
   height: 200px;
   z-index: -1;
   opacity: 0.9;
+  animation: mountainDrift 28s ease-in-out infinite alternate;
 }
 
-/* Background mountains */
-#hero-mountain-bg {
-  fill: none;
-  stroke-width: 3px;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  stroke: url(#mountainGradientBg);
-
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
-  animation:
-    mountainDrawBg 3.5s ease-out forwards,
-    mountainParallaxBg 18s ease-in-out infinite 3.5s,
-    mountainRipple 9s ease-in-out infinite 3.5s;
-}
-
-/* Foreground mountains */
 #hero-mountain-fg {
   fill: none;
   stroke-width: 4px;
   stroke-linejoin: round;
   stroke-linecap: round;
   stroke: url(#mountainGradientFg);
-
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
   animation:
@@ -204,20 +183,8 @@
     mountainRipple 7s ease-in-out infinite 3.2s;
 }
 
-/* Draw-on animations */
-@keyframes mountainDrawBg {
-  to { stroke-dashoffset: 0; }
-}
-
 @keyframes mountainDrawFg {
   to { stroke-dashoffset: 0; }
-}
-
-/* Parallax drift */
-@keyframes mountainParallaxBg {
-  0%   { transform: translateX(-12px); }
-  50%  { transform: translateX(12px); }
-  100% { transform: translateX(-12px); }
 }
 
 @keyframes mountainParallaxFg {
@@ -226,9 +193,13 @@
   100% { transform: translateX(10px); }
 }
 
-/* Wind ripple (subtle vertical wave) */
 @keyframes mountainRipple {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(6px); }
   100% { transform: translateY(0); }
+}
+
+@keyframes mountainDrift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-18px); }
 }
