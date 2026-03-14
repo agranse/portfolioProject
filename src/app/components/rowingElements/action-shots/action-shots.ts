@@ -22,11 +22,11 @@ export class ActionShots implements AfterViewInit {
   private isAppending = false;
 
   baseClips = [
-    { mp4: 'assets/rowingVideos/vid1.mp4', poster: 'assets/rowingVideos/posters/vid1.jpg' },
-    { mp4: 'assets/rowingVideos/vid4.mp4', poster: 'assets/rowingVideos/posters/vid4.jpg' },
-    { mp4: 'assets/rowingVideos/vid2.mp4', poster: 'assets/rowingVideos/posters/vid2.jpg' },
-    { mp4: 'assets/rowingVideos/vid5.mp4', poster: 'assets/rowingVideos/posters/vid5.jpg' },
-    { mp4: 'assets/rowingVideos/vid3.mp4', poster: 'assets/rowingVideos/posters/vid3.jpg' },
+    { mp4: 'assets/rowingVideos/1.mp4', poster: 'assets/rowingVideos/posters/vid1.jpg' },
+    { mp4: 'assets/rowingVideos/4.mp4', poster: 'assets/rowingVideos/posters/vid4.jpg' },
+    { mp4: 'assets/rowingVideos/2.mp4', poster: 'assets/rowingVideos/posters/vid2.jpg' },
+    { mp4: 'assets/rowingVideos/5.mp4', poster: 'assets/rowingVideos/posters/vid5.jpg' },
+    { mp4: 'assets/rowingVideos/3.mp4', poster: 'assets/rowingVideos/posters/vid3.jpg' },
   ];
 
   actionClips = [...this.baseClips, ...this.baseClips, ...this.baseClips, ...this.baseClips, ...this.baseClips];
