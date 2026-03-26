@@ -19,7 +19,6 @@ export class ActionShots implements AfterViewInit {
   private isUserInteracting = false;
   private dragStartX = 0;
   private scrollStartX = 0;
-  private isAppending = false;
 
   baseClips = [
     { mp4: 'assets/rowingVideos/1.mp4', poster: 'assets/rowingVideos/posters/vid1.jpg' },
