@@ -1,0 +1,64 @@
+<section class="projects-index">
+  <header class="projects-header">
+    <h1 class="projects-title">Projects</h1>
+    <p class="projects-subtitle">
+      A quiet index of selected work — each entry opens like a chapter.
+    </p>
+  </header>
+
+  <div class="projects-list">
+    <button
+      *ngFor="let project of projects"
+      class="projects-line"
+      type="button"
+      (click)="openProject(project)"
+    >
+    <div class="projects-line-accent">
+      <div class="projects-line-main">
+        <span class="projects-line-index">{{ project.index }}</span>
+        <span class="projects-line-dash">—</span>
+        <span class="projects-line-title">{{ project.title }}</span>
+      </div>
+
+      <div class="projects-line-teaser">
+        {{ project.teaser }}
+      </div>
+      </div>
+      <span class="projects-line-underline"></span>
+    </button>
+  </div>
+
+  <div
+    class="projects-overlay"
+    *ngIf="activeProject"
+    (click)="onOverlayBackgroundClick($event)"
+  >
+    <div class="projects-overlay-panel">
+      <button
+        class="projects-overlay-close"
+        type="button"
+        (click)="closeProject()"
+        aria-label="Close project details"
+      >
+        ×
+      </button>
+
+      <h2 class="projects-overlay-title">
+        {{ activeProject.title }}
+      </h2>
+
+      <p class="projects-overlay-description">
+        {{ activeProject.description }}
+      </p>
+
+      <a
+        class="projects-overlay-link"
+        [href]="activeProject.githubUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View on GitHub
+      </a>
+    </div>
+  </div>
+</section>

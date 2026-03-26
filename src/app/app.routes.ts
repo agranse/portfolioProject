@@ -31,6 +31,10 @@ export const routes: Routes = [
     loadComponent: () => import('./components/travel/travel').then(m => m.Travel)
   },
   { 
+    path: 'projects', 
+    loadComponent: () => import('./components/projects/projects').then(m => m.Projects)
+  },
+  { 
     path: '**', 
     loadComponent: () => import('./components/errorcomponent/errorcomponent').then(m => m.ErrorComponent)
   }
