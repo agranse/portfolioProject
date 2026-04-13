@@ -5,19 +5,25 @@
 }
 
 .travel-map {
-  padding: 6rem clamp(2rem, 6vw, 5rem);
+  position: relative;
+  width: 100%;
+  padding: 0; /* remove big padding so the map can be a hero */
+  overflow: hidden; /* prevents scroll from oversized image */
+}
+
+.travel-map .map-wrapper {
+  max-width: 1400px;
 }
 
 .travel-header {
-  max-width: 48rem;
-  margin-bottom: 3rem;
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.8rem;
-  color: #b3a6d4;
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 5;
+  width: 100%;
+  pointer-events: none; /* stars still clickable */
 }
 
 .travel-header h1 {
@@ -35,14 +41,18 @@
 .map-wrapper {
   position: relative;
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
+  height: 80vh; /* hero height */
+  overflow: hidden;
 }
 
 .map-image {
-  width: 100%;
-  display: block;
-  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 130%;   /* zoom using height */
+  width: auto;    /* maintain aspect ratio */
+  transform: translate(-50%, -50%);
+  object-fit: contain;
 }
 
 .map-star {
@@ -83,19 +93,6 @@
   width: 100%;
   border-radius: 10px;
   margin-bottom: 0.75rem;
-}
-
-.popup-location {
-  margin: 0.25rem 0 0.5rem;
-  font-size: 0.9rem;
-  color: #b3a6d4;
-}
-
-.popup-blurb {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #d8d2ea;
 }
 
 @media (max-width: 900px) {
@@ -145,9 +142,6 @@
     border-radius: 8px;
   }
 
-  .popup-blurb {
-    font-size: 0.9rem;
-  }
 }
 
 @media (max-width: 420px) {
@@ -166,13 +160,5 @@
     bottom: 12px;
     padding: 0.7rem;
     border-radius: 12px;
-  }
-
-  .popup-location {
-    font-size: 0.85rem;
-  }
-
-  .popup-blurb {
-    font-size: 0.85rem;
   }
 }
