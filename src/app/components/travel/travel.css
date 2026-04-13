@@ -4,58 +4,85 @@
   color: #f5f3ff;
 }
 
+/* Layout */
+
 .travel-map {
-  padding: 6rem clamp(2rem, 6vw, 5rem);
+  position: relative;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
 }
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.map-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 180%;
+  width: 180%;
+  transform: translate(-50%, -50%);
+}
+
+.map-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.map-star {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ffffff;
+  transform: translate(-50%, -50%);
+}
+
+/* Header */
 
 .travel-header {
-  max-width: 48rem;
-  margin-bottom: 3rem;
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.8rem;
-  color: #b3a6d4;
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 5;
+  width: 100%;
+  pointer-events: none;
 }
 
 .travel-header h1 {
   font-size: clamp(2.4rem, 4vw, 3.2rem);
   text-transform: uppercase;
   margin: 0.5rem 0 1rem;
+  /* color: #fff; */
+
+  /* Thick black outline */
+  text-shadow:
+    -3px -3px 0 #000,
+     3px -3px 0 #000,
+    -3px  3px 0 #000,
+     3px  3px 0 #000,
+    /* Softer outer glow */
+    0 0 20px rgba(255,215,0,0.6),
+    0 0 40px rgba(255,215,0,0.4);
 }
 
-.lede {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #c7bfdc;
-}
-
-.map-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.map-image {
-  width: 100%;
-  display: block;
-  border-radius: 20px;
-}
-
-.map-star {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  background: #f3d28b;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 0 8px #f3d28b;
-  transform: translate(-50%, -50%);
-}
+/* Popup */
 
 .popup {
   position: fixed;
@@ -79,24 +106,7 @@
   cursor: pointer;
 }
 
-.popup-photo {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 0.75rem;
-}
-
-.popup-location {
-  margin: 0.25rem 0 0.5rem;
-  font-size: 0.9rem;
-  color: #b3a6d4;
-}
-
-.popup-blurb {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #d8d2ea;
-}
+/* Media queries (you can keep tweaking sizes) */
 
 @media (max-width: 900px) {
   .travel-map {
@@ -123,14 +133,10 @@
     font-size: clamp(2rem, 6vw, 2.6rem);
   }
 
-  .lede {
-    font-size: 0.95rem;
-  }
-
   .map-star {
     width: 10px;
     height: 10px;
-    box-shadow: 0 0 6px #f3d28b;
+    box-shadow: 0 0 6px #ffffff;
   }
 
   .popup {
@@ -139,14 +145,6 @@
     right: 20px;
     width: 220px;
     padding: 0.8rem;
-  }
-
-  .popup-photo {
-    border-radius: 8px;
-  }
-
-  .popup-blurb {
-    font-size: 0.9rem;
   }
 }
 
@@ -166,13 +164,5 @@
     bottom: 12px;
     padding: 0.7rem;
     border-radius: 12px;
-  }
-
-  .popup-location {
-    font-size: 0.85rem;
-  }
-
-  .popup-blurb {
-    font-size: 0.85rem;
   }
 }
