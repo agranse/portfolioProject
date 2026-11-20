@@ -31,14 +31,29 @@
     opacity 0.25s ease;
 }
 
+.contact-icon:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 8px;
+  border-radius: 4px;
+}
+
 .contact-icon:hover {
   transform: scale(1.22);
   opacity: 0.95;
-  text-shadow: 0 0 12px rgba(148, 163, 255, 0.6);
+  text-shadow: 0 0 12px rgba(212, 185, 138, 0.5);
 }
 
 .contact-card {
   padding: 2rem;
+}
+
+.contact-availability {
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+  text-align: center;
 }
 
 @media (max-width: 420px) {

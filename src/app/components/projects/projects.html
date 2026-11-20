@@ -47,6 +47,15 @@
         {{ activeProject.title }}
       </h2>
 
+      <div class="projects-overlay-technologies">
+        <span
+          class="projects-tech-tag"
+          *ngFor="let technology of activeProject.technologies"
+        >
+          {{ technology }}
+        </span>
+      </div>
+
       <p class="projects-overlay-description">
         {{ activeProject.description }}
       </p>

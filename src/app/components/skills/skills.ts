@@ -39,29 +39,63 @@ export class Skills {
       title: 'Technical Skills',
       groups: [
         {
-          title: 'Languages & Frameworks',
+          title: 'Languages',
           tags: [
-            'Angular','TypeScript','C#','MS SQL','JavaScript','HTML & CSS','SCSS',
-            'RxJS','ASP.NET','ExpressJS','Node.js','Java','C/C++','Python','Embedded C'
+            'C#',
+            'TypeScript',
+            'JavaScript',
+            'SQL',
+            'Python',
+            'Java',
+            'C/C++'
           ]
         },
         {
-          title: 'Testing & Quality',
+          title: 'Frameworks & Libraries',
           tags: [
-            'Unit Testing','Integration Testing','Debugging & Diagnostics',
-            'Code Reviews','Performance Optimization'
+            '.NET',
+            'ASP.NET Core',
+            'Angular',
+            'Node.js',
+            'Express.js'
           ]
         },
         {
-          title: 'Tools & Platforms',
+          title: 'Databases',
           tags: [
-            'Azure DevOps','Git & GitHub','Visual Studio','VS Code',
-            'Postman','Docker','Linux'
+            'Microsoft SQL Server',
+            'MySQL'
           ]
         },
         {
-          title: 'UI/UX & Frontend Craft',
-          tags: ['Responsive Design','Component Architecture','Design Systems']
+          title: 'AI & Developer Tools',
+          tags: [
+            'GitHub Copilot',
+            'Visual Studio',
+            'Git',
+            'GitHub',
+            'Azure DevOps',
+            'Postman',
+            'Jest'
+          ]
+        },
+        {
+          title: 'DevOps & Technologies',
+          tags: [
+            'CI/CD',
+            'Docker',
+            'Linux',
+            'REST APIs',
+            'SignalR'
+          ]
+        },
+        {
+          title: 'Engineering Practices',
+          tags: [
+            'Object-Oriented Programming',
+            'Software Design Patterns',
+            'Agile/Scrum'
+          ]
         }
       ]
     },
@@ -71,18 +105,32 @@ export class Skills {
         {
           title: 'Collaboration & Communication',
           tags: [
-            'Cross‑Team Collaboration','Client Communication','Technical Support',
-            'Mentorship','Requirements Gathering','Technical Documentation',
-            'Time Management','Prioritization'
+            'Cross-Functional Collaboration',
+            'Stakeholder Communication',
+            'Requirements Analysis',
+            'Technical Documentation',
+            'Technical Support'
           ]
         },
         {
-          title: 'Agile & Delivery',
-          tags: ['Scrum','Sprint Planning','CI/CD Workflows','Iterative Development']
+          title: 'Engineering & Problem-Solving',
+          tags: [
+            'Debugging & Troubleshooting',
+            'Production Support',
+            'Problem-Solving',
+            'Technical Decision-Making',
+            'Process Improvement'
+          ]
         },
         {
-          title: 'Problem‑Solving & Ownership',
-          tags: ['Debugging','Process Improvement','Production Deployment']
+          title: 'Project & Delivery',
+          tags: [
+            'Agile Development',
+            'Sprint Planning',
+            'Prioritization',
+            'Workflow Optimization',
+            'CI/CD Workflows'
+          ]
         }
       ]
     },
@@ -92,22 +140,32 @@ export class Skills {
         {
           title: 'Computer Science Foundations',
           tags: [
-            'Algorithms','Operating Systems','Database Systems',
-            'Software Engineering','Machine Architecture','Software Design Patterns'
+            'Algorithms & Data Structures',
+            'Operating Systems',
+            'Database Systems',
+            'Software Engineering',
+            'Machine Architecture',
+            'Software Design Patterns'
           ]
         },
         {
           title: 'Historical & Analytical Thinking',
           tags: [
-            'Cultural Evolution','Material Culture Analysis',
-            'Archaeological Interpretation','Research Methodology'
+            'Cultural Evolution',
+            'Material Culture Analysis',
+            'Archaeological Interpretation',
+            'Historical Research',
+            'Research Methodology'
           ]
         },
         {
           title: 'Interdisciplinary Strengths',
           tags: [
-            'Systems Thinking','Pattern Recognition',
-            'Qualitative + Quantitative Synthesis','Long‑Term Analysis'
+            'Systems Thinking',
+            'Pattern Recognition',
+            'Qualitative & Quantitative Analysis',
+            'Critical Thinking',
+            'Long-Term Analysis'
           ]
         }
       ]

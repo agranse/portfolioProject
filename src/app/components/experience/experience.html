@@ -37,11 +37,16 @@
 
   <hr class="exp-divider">
 
-  <h2 class="exp-section-title" [style.--i]="experience.length + 2">Education</h2>
+  <h2
+    class="exp-section-title"
+    [style.--i]="experience.length + 2"
+  >
+    Leadership & Community Involvement
+  </h2>
 
   <div
     class="exp-item glass hover-lift"
-    *ngFor="let item of education; let i = index"
+    *ngFor="let item of leadership; let i = index"
     [class.open]="openIndex === (i + experience.length)"
     [style.--i]="experience.length + 3 + i"
   >
@@ -51,13 +56,50 @@
       [class.open]="openIndex === (i + experience.length)"
     >
       <span class="exp-title">{{ item.title }}</span>
-      <span class="exp-arrow">›</span>
+
+      <span class="exp-toggle-right">
+        <span class="exp-years">{{ item.years }}</span>
+        <span class="exp-arrow">›</span>
+      </span>
     </button>
 
     <div
       class="exp-content"
       [class.open]="openIndex === (i + experience.length)"
       [style.maxHeight]="openIndex === (i + experience.length) ? (content.scrollHeight + 32) + 'px' : '0'"
+      #content
+    >
+      <p class="exp-dates">{{ item.meta }}</p>
+
+      <ul>
+        <li *ngFor="let bullet of item.bullets">{{ bullet }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="exp-divider">
+
+  <h2 class="exp-section-title" [style.--i]="experience.length + leadership.length + 2">Education</h2>
+
+  <div
+    class="exp-item glass hover-lift"
+    *ngFor="let item of education; let i = index"
+    [class.open]="openIndex === (i + experience.length + leadership.length)"
+    [style.--i]="experience.length + leadership.length + 3 + i"
+  >
+    <button
+      class="exp-toggle"
+      (click)="toggle(i + experience.length + leadership.length)"
+      [class.open]="openIndex === (i + experience.length + leadership.length)"
+    >
+      <span class="exp-title">{{ item.title }}</span>
+      <span class="exp-arrow">›</span>
+    </button>
+
+    <div
+      class="exp-content"
+      [class.open]="openIndex === (i + experience.length + leadership.length)"
+      [style.maxHeight]="openIndex === (i + experience.length + leadership.length) ? (content.scrollHeight + 32) + 'px' : '0'"
       #content
     >
       <p class="exp-dates">{{ item.meta }}</p>

@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -6,13 +7,14 @@ interface ProjectEntry {
   index: string;
   title: string;
   teaser: string;
+  technologies: string[];
   description: string;
   githubUrl: string;
 }
 
 @Component({
   selector: 'app-projects',
-  imports: [ CommonModule ],
+  imports: [CommonModule],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
   standalone: true
@@ -23,36 +25,27 @@ export class Projects {
       id: 'portfolio',
       index: '01',
       title: 'Personal Portfolio Website',
-      teaser: 'A cinematic, cosmic-editorial portfolio built with Angular and scalable motion systems.',
-      description: `Designed, built, and deployed a production-grade portfolio using Angular with a fully 
-      component‑driven architecture. Implemented custom animation systems, dynamic content rendering, and 
-      reusable UI modules to support long‑term scalability. Optimized frontend performance and accessibility 
-      while maintaining a polished, editorial visual identity. Deployed via Netlify with automated CI/CD for 
-      continuous delivery and versioned updates.`,
+      teaser: 'A responsive Angular application built with reusable components, custom animations, and automated deployment.',
+      technologies: ['Angular', 'TypeScript', 'CSS'],
+      description: `Designed, developed, and deployed a responsive portfolio website using Angular, TypeScript, and CSS. Built reusable components and route-based rendering to organize content into modular, maintainable sections. Implemented custom animations and optimized video and image delivery to improve performance across devices. Configured automated Netlify deployments and environment-based configuration to support continuous updates.`,
       githubUrl: 'https://github.com/agranse/portfolioProject'
     },
     {
       id: 'microblog',
       index: '02',
       title: 'Microblogging Platform',
-      teaser: 'A full‑stack microblogging platform with secure accounts, dynamic feeds, and efficient content retrieval.',
-      description: `Built a full‑stack blogging platform using Express.js, PUG, and MySQL to support user posts, 
-      authentication, and account management. Implemented role‑based access control for secure post creation, 
-      editing, and deletion. Designed efficient pagination and search queries to handle large datasets and improve 
-      browsing performance. Developed RESTful APIs for posts, comments, and user operations, and used server‑side 
-      templating for smooth, dynamic interactions without page reloads.`,
+      teaser: 'A full-stack blogging platform featuring authentication, role-based access control, and relational data management.',
+      technologies: ['Express.js', 'Node.js', 'MySQL'],
+      description: `Built a full-stack blogging platform using Express.js, Node.js, and MySQL, supporting user authentication, content creation, commenting, and search. Designed REST APIs with session management and role-based access control to manage user permissions and secure application functionality. Developed relational database schemas and optimized queries and pagination to support efficient data retrieval and content browsing.`,
       githubUrl: 'https://github.com/agranse/Microblogging'
     },
     {
       id: 'delivery-sim',
       index: '03',
       title: 'Package Delivery Simulation',
-      teaser: 'A real‑time delivery simulation built with OOP and advanced design patterns.',
-      description: `Developed a virtual delivery simulation using OOP principles and design patterns including Singleton, 
-      Observer, Factory, and Decorator to maximize flexibility and maintainability. Implemented real‑time data collection, 
-      porch‑pirate detection, and dynamic entity creation, improving system efficiency by 25%. Achieved 95% unit test 
-      coverage to ensure reliability and correctness across simulation behaviors. Refactored core components to 
-      reduce processing time by 15% and improve overall performance.`,
+      teaser: 'An object-oriented delivery simulation using established design patterns and event-driven system behavior.',
+      technologies: ['C++', 'Python'],
+      description: `Architected an object-oriented package delivery simulation using C++ and Python, applying Singleton, Observer, Decorator, and Factory design patterns to structure system components and interactions. Implemented event-driven tracking, dynamic entity interactions, and real-time delivery updates. Developed unit tests covering 95% of the codebase to validate simulation behavior and improve reliability.`,
       githubUrl: 'https://github.com/agranse/PackageDeliverySimulation'
     }
   ];
